@@ -205,7 +205,7 @@ contigset_id - the ContigSet to count.
 
 =head2 get_person
 
-  $return = $obj->get_person($arg_1)
+  $return = $obj->get_person($name)
 
 =over 4
 
@@ -214,7 +214,7 @@ contigset_id - the ContigSet to count.
 =begin html
 
 <pre>
-$arg_1 is a string
+$name is a string
 $return is a pavel_sdk_test_python.Person
 Person is a reference to a hash where the following keys are defined:
 	person_name has a value which is a string
@@ -226,7 +226,7 @@ Person is a reference to a hash where the following keys are defined:
 
 =begin text
 
-$arg_1 is a string
+$name is a string
 $return is a pavel_sdk_test_python.Person
 Person is a reference to a hash where the following keys are defined:
 	person_name has a value which is a string
@@ -255,10 +255,10 @@ Person is a reference to a hash where the following keys are defined:
 							       "Invalid argument count for function get_person (received $n, expecting 1)");
     }
     {
-	my($arg_1) = @args;
+	my($name) = @args;
 
 	my @_bad_arguments;
-        (!ref($arg_1)) or push(@_bad_arguments, "Invalid type for argument 1 \"arg_1\" (value was \"$arg_1\")");
+        (!ref($name)) or push(@_bad_arguments, "Invalid type for argument 1 \"name\" (value was \"$name\")");
         if (@_bad_arguments) {
 	    my $msg = "Invalid arguments passed to get_person:\n" . join("", map { "\t$_\n" } @_bad_arguments);
 	    Bio::KBase::Exceptions::ArgumentValidationError->throw(error => $msg,

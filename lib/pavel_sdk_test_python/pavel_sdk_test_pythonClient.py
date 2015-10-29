@@ -178,10 +178,10 @@ class pavel_sdk_test_python(object):
                           [workspace_name, contigset_id], json_rpc_context)
         return resp[0]
   
-    def get_person(self, arg_1, json_rpc_context = None):
+    def get_person(self, name, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_person: argument json_rpc_context is not type dict as required.')
         resp = self._call('pavel_sdk_test_python.get_person',
-                          [arg_1], json_rpc_context)
+                          [name], json_rpc_context)
         return resp[0]
  

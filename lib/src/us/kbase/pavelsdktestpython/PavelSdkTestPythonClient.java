@@ -164,14 +164,14 @@ public class PavelSdkTestPythonClient {
      * <p>Original spec-file function name: get_person</p>
      * <pre>
      * </pre>
-     * @param   arg1   instance of String
+     * @param   name   instance of String
      * @return   instance of type {@link us.kbase.pavelsdktestpython.Person Person}
      * @throws IOException if an IO exception occurs
      * @throws JsonClientException if a JSON RPC exception occurs
      */
-    public Person getPerson(String arg1, RpcContext... jsonRpcContext) throws IOException, JsonClientException {
+    public Person getPerson(String name, RpcContext... jsonRpcContext) throws IOException, JsonClientException {
         List<Object> args = new ArrayList<Object>();
-        args.add(arg1);
+        args.add(name);
         TypeReference<List<Person>> retType = new TypeReference<List<Person>>() {};
         List<Person> res = caller.jsonrpcCall("pavel_sdk_test_python.get_person", args, retType, true, true, jsonRpcContext);
         return res.get(0);

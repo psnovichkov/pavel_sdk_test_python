@@ -29,7 +29,7 @@ module pavel_sdk_test_python {
 	*/
 	funcdef count_contigs(workspace_name,contigset_id) returns (CountContigsResults) authentication required;
 
-	funcdef get_person(string) returns (Person) authentication required;
+	funcdef get_person(string name) returns (Person) authentication required;
 
 
 };

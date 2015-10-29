@@ -1,7 +1,7 @@
 #
 # define display information
 #
-name: Count Contigs
+name: Person info
 tooltip: |
 	Counts the number of contigs in a contig set.
 screenshots: []
@@ -21,7 +21,7 @@ suggestions:
 		related:
 			[]
 		next:
-			[annotate_contigset]
+			[]
 
 #
 # Configure the display and description of parameters
