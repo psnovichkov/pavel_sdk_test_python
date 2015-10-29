@@ -1,0 +1,51 @@
+{
+	"ver": "0.0.1",
+	
+	"authors": [
+		"psnovichkov"
+	],
+	"contact": "help@kbase.us",
+	"visible": true,
+	"categories": ["active"],
+	"widgets": {
+		"input": null,
+		"output": null
+	},
+	"parameters": [ 
+		{
+			"id": "in_name",
+			"optional": false,
+			"advanced": false,
+			"allow_multiple": false,
+			"default_values": [ "Yuri Gagarin" ],
+			"field_type": "text",
+			"text_options": {
+			}
+		}
+	],
+    "behavior": {
+		"service-mapping": {
+			"url": "",
+			"name": "pavel_sdk_test_python",
+			"method": "get_person",
+			"input_mapping": [
+				{
+					"input_parameter": "in_name",
+					"target_argument_position": 0
+				}	
+			],
+			"output_mapping": [
+				{
+					"service_method_output_path": [0, "person_name"],
+					"target_property": "person_name"
+				},
+				{
+					"service_method_output_path": [0, "image_url"],
+					"target_property": "image_url"
+				}
+			]
+		}
+	},
+	"job_id_output_field": "docker"    
+
+}

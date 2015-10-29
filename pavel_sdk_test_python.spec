@@ -18,9 +18,18 @@ module pavel_sdk_test_python {
 	    int contig_count;
 	} CountContigsResults;
 	
+	typedef structure{
+	    string person_name;
+	    string person_url;
+	} Person;
+
 	/*
 	Count contigs in a ContigSet
 	contigset_id - the ContigSet to count.
 	*/
 	funcdef count_contigs(workspace_name,contigset_id) returns (CountContigsResults) authentication required;
+
+	funcdef get_person(string) returns (Person) authentication required;
+
+
 };

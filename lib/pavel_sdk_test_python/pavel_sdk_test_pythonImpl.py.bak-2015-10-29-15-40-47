@@ -7,12 +7,10 @@ class pavel_sdk_test_python:
     '''
     Module Name:
     pavel_sdk_test_python
-
     Module Description:
-    A KBase module: pavel_sdk_test_python
-This sample module contains one small method - count_contigs.
+    
     '''
-
+    
     ######## WARNING FOR GEVENT USERS #######
     # Since asynchronous IO can lead to methods - even the same method -
     # interrupting each other, you must be *very* careful when using global
@@ -22,7 +20,7 @@ This sample module contains one small method - count_contigs.
     #BEGIN_CLASS_HEADER
     workspaceURL = None
     #END_CLASS_HEADER
-
+    
     # config contains contents of config file in a hash or None if it couldn't
     # be found
     def __init__(self, config):
@@ -40,25 +38,10 @@ This sample module contains one small method - count_contigs.
         contigSet = wsClient.get_objects([{'ref': workspace_name+'/'+contigset_id}])[0]['data']
         returnVal = {'contig_count': len(contigSet['contigs'])}
         #END count_contigs
-
-        # At some point might do deeper type checking...
-        if not isinstance(returnVal, dict):
-            raise ValueError('Method count_contigs return value ' +
-                             'returnVal is not type dict as required.')
-        # return the results
-        return [returnVal]
-
-    def get_person(self, ctx, name):
-        # ctx is the context object
-        # return variables are: returnVal
-        #BEGIN get_person
-        returnVal = {'person_name': name, 'image_url': "<img src='http://www.spacefacts.de/mission/alternate/photo/gagarin_yuri_3.jpg'>"}
         
-        #END get_person
-
         # At some point might do deeper type checking...
-        if not isinstance(returnVal, dict):
-            raise ValueError('Method get_person return value ' +
-                             'returnVal is not type dict as required.')
+        if not isinstance(returnVal, object):
+            raise ValueError('Method count_contigs return value ' +
+                             'returnVal is not type object as required.')
         # return the results
         return [returnVal]
